@@ -12,8 +12,8 @@ import lombok.Getter;
 public enum RetCode {
 
     NORMAL(0, "正常"),
-    LOGIN_OTHERWISE(1101, "其它地方登陆"),
-    MOBILE_LOGIN_OUT(1102, "移动端退出"),
+    NOT_LOGIN_CHECK(1101, "未检测到登录"),
+    COOKIE_INVALID_ERROR(1102, "cookie值无效"),
     UNKNOWN(9999, "未知");
 
     private int    code;
@@ -29,9 +29,9 @@ public enum RetCode {
             case 0:
                 return NORMAL;
             case 1102:
-                return MOBILE_LOGIN_OUT;
+                return COOKIE_INVALID_ERROR;
             case 1101:
-                return LOGIN_OTHERWISE;
+                return NOT_LOGIN_CHECK;
             default:
                 return UNKNOWN;
         }

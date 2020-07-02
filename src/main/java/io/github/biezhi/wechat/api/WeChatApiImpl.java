@@ -359,7 +359,7 @@ public class WeChatApiImpl implements WeChatApi {
     }
 
     /**
-     * 开启一个县城接收监听
+     * 开启一个线程接收监听
      */
     private void startRevive() {
         bot.setRunning(true);

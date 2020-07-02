@@ -34,12 +34,12 @@ public class ChatLoop implements Runnable {
                 if (syncCheckRet.getRetCode() == UNKNOWN) {
                     log.info("未知状态");
                     continue;
-                } else if (syncCheckRet.getRetCode() == MOBILE_LOGIN_OUT) {
-                    log.info("你在手机上登出了微信，再见");
+                } else if (syncCheckRet.getRetCode() == COOKIE_INVALID_ERROR) {
+                    log.info("cookie值无效");
                     api.logout();
                     break;
-                } else if (syncCheckRet.getRetCode() == LOGIN_OTHERWISE) {
-                    log.info("你在其他地方登录了 WEB 版微信，再见");
+                } else if (syncCheckRet.getRetCode() == NOT_LOGIN_CHECK) {
+                    log.info("未检测到登录");
                     api.logout();
                     break;
                 } else if (syncCheckRet.getRetCode() == NORMAL) {
